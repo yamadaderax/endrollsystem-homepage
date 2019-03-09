@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>END ROLL SYSTEM official web site</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'master.css' %}">
+  </head>
+  <body style="margin: 0;">
+    <div class="wrapper">
+      <div class="wrapp">
+        <div class="name">
+          <div id="end">END ROLL SYSTEM </div>
+
+        </div>
+        <!-- header -->
+          <div class="menu">
+            <ul>
+              <li><a href="home">HOME</a></li>
+              <li><a href="schedule">SUCHEDULE</a></li>
+              <li><a href="disc">DISCOGRAPHY</a></li>
+              <li><a href="movie">MOVIE</a></li>
+              <li><a href="contact">CONTACT</a></li>
+            </ul>
+          </div>
+      </div>
+      {% block main %}
+      {% endblock %}
+      <div class="footer">
+        ©2019 tokyo-city END ROLL SYSTEM inc. All Rights Reserved.
+      </div>
+    </div>
+  </body>
+</html>

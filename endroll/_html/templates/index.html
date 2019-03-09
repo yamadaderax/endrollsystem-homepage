@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block main %}
+      {% load static %}
+      <!-- header画像 -->
+      <div class="center">
+        <img class="headIMG" src="{% static 'endroll/img/head.JPG' %}" alt="img">
+      </div>
+
+      <!-- メインコンテンツ -->
+      <div class="wrapp2">
+        <div class="main_contents">
+          <div id="suche" class="contents">
+            <h3>Pick up lives</h3>
+            <table>
+              <thead class="pickuplive_head">
+                <th></th>
+                <th>イベント名</th>
+                <th>日時</th>
+                <th>場所</th>
+              </thead>
+              {% for i in suchedule %}
+              <tr class="pickuplive_tr">
+                <td class="pickuplive_td"><img class="scheimg" src="{{ i.img.image.url }}"></td>
+                <td class="pickuplive_td">{{ i.name }}</td>
+                <td class="pickuplive_td">{{ i.live_date }}</td>
+                <td class="pickuplive_td">{{ i.place }}</td>
+                <td class="pickuplive_td"><a href="{{ i.url }}">詳細</a></td>
+              </tr>
+              {% endfor %}
+            </table>
+            <a href="schedule">Show All Schedules</a>
+          </div>
+          <div id="prof" class="contents">
+            <h3>PROFILE</h3>
+            <p>{{ prof.prof }}</p>
+          </div>
+          <div id="disc" class="contents">
+            <h3>disc</h3>
+            <p>add deiscography in this place
+               {% for i in disk %}
+               {{ i.name }}
+               {% endfor %}
+               </p>
+          </div>
+          <div id="movie" class="contents">
+            <h3>MOVIE</h3>
+            <p>add movie contents in this space</p>
+          </div>
+        </div>
+        <div class="side_contents">
+
+        <iframe src="https://www.youtube.com/embed/SjCGUMxnwzQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <a class="twitter-timeline" data-height="500" href="https://twitter.com/ERS__official?ref_src=twsrc%5Etfw">Tweets by ERS__official</a> <script class="twitter_widjet" async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+      </div>
+
+{% endblock %}
